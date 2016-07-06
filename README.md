@@ -1,9 +1,26 @@
 ## Meganote
+Meganote is a clone of Evernote written in AngularJS.
 
 ### Prerequisities
 What things you need to install the software and how to install them
 
-Meganote requires [Node.js](https://nodejs.org/) v4+ to run.
+Meganote requires
+* [MLAB](https://mlab.com/) account
+    * Sign up for MLAB 
+    * Create a new deployment and select the Sandbox Standard Line
+    * Enter a database name i.e "meganote_foo"
+    * Add a new collection i.e "notes_bar"
+    * Make a database user and password i.e "user_buzz" and "password_xyz"
+    * Find the MongoDB URI for your Database and copy it to a dotenv file and replace the dbuser and dbpassword field with your the database user and password from earlier
+    * For example 
+    ```sh
+    $ touch .env 
+    $ gedit .env <--- paste DB_URI=mongodb://<dbuser>:<dbpassword>@<host>:<port>/<db> --->
+    ```
+
+* [Node.js](https://nodejs.org/) v4+ to run.
+* [Meganote-Server](https://github.com/mketiku/meganote_server)
+
 You also need Gulp installed globally:
 ```sh
 $ sudo npm install gulp -g
@@ -33,9 +50,13 @@ Add additional notes about how to deploy this on a live system
 
 ### Built With
 * gulp
+* bootstrap
+* supervisor
 * npm
 * nodejs
-* angularjs 
+* angularjs
+* mlab.com
+* jquery
 
 ### Acknowledgments
 * Davey Strauss 
