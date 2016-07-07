@@ -8,8 +8,7 @@
         .state('sign-up',{
             url:'/sign-up',
             template:'<sign-up></sign-up>',
-
-            template:<h1>Signup State </h1>,
+            // template:<h1>Signup State </h1>,
         });
     }
 }
