@@ -1,4 +1,4 @@
-(function() {
+{
   'use strict';
   angular.module('meganote', [
     'ui.router',
@@ -13,4 +13,4 @@
   function config($urlRouterProvider) {
     $urlRouterProvider.otherwise('/notes/');
   }
-})();
+};
