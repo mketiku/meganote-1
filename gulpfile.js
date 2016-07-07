@@ -51,10 +51,9 @@ var jsFiles = [
             // serve the server to run from here
         })
   }
-
   function watch(){
     // watch for changes in certain files and when they change run, a series of tasks
-    gulp.watch('app/**/*',['bundle']);
+    gulp.watch('app/**/*','gulpfile.js',['bundle']);
     // any file in any subdirectory of app
   }
 })();
