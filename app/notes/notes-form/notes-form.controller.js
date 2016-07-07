@@ -20,7 +20,7 @@
       if (vm.note._id) {
         NotesService.update(vm.note)
           .then(
-            fres => {
+            res => {
               vm.note = angular.copy(res.data.note);
               Flash.create('success', res.data.message);
             },
