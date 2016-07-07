@@ -37,6 +37,9 @@ var jsFiles = [
      .pipe(concat('bundle.js')) //smash all js files into bundle.js
      .pipe(sourcemaps.write('')) //emits the .map file for debugging
     //  source maps maintains the original file for console.log errors
+    .pipe(babel({
+      presets:['es2015']
+    }))
     .pipe(gulp.dest('app/content'));
   }
 
