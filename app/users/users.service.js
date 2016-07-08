@@ -1,11 +1,24 @@
 {
-    // create a array for users
-    class UsersService{
-        create(user){
-            console.log('Created');
-            console.log(user)
+  angular.module('meganote.users')
+    .service('UsersService', [
+      '$http',
+      'API_BASE',
+      ($http, API_BASE) => {
+
+        class UsersService {
+          create(user) {
+            return $http.post(`${API_BASE}users`, {
+              user,
+            })
+              .then(
+                res => {
+                  console.log(res.data);
+                }
+              );
+          }
         }
-    }
-    angular.module('meganote.users')
-    .service('UsersService',)
+        return new UsersService();
+
+      }
+    ]);
 }
