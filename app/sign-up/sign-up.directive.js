@@ -1,17 +1,16 @@
 {
     angular.module('meganote.signUp')
-        .directive('signUp', [() => {
+        .directive('signUp', [
             'UsersService',
             (UsersService) => {
-        class SignUpController {
-            constructor(UsersService) {
-            this.user ={};
+            class SignUpController {
+                constructor() {
+                this.user ={};
+                }
+                submit() {
+                UserService.create(this.user);
+                }
             }
-            submit() {
-            UserService.create(this.user);
-            }
-        }
-        SignUpController.$inject = ['UsersService'];
 
         return {
             scope: {},
@@ -20,5 +19,5 @@
             bindToController: true,
             templateUrl: '/sign-up/sign-up.html',
         };
-        }}]);
+        }]);
 }
